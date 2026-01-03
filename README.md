@@ -40,7 +40,7 @@ A beautiful, real-time task manager with community chat, built with modern web t
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/convex-nextjs.git
+   git clone https://github.com/dfanso/convex-nextjs.git
    cd convex-nextjs
    ```
 
