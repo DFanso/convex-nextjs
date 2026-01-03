@@ -7,17 +7,17 @@ A beautiful, real-time task manager with community chat, built with modern web t
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat-square&logo=typescript)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38B2AC?style=flat-square&logo=tailwind-css)
 
-## ✨ Features
+## Features
 
-- **🔐 Authentication** - Email/password auth powered by Convex Auth
-- **📝 Todo List** - Personal task management with CRUD operations
-- **💬 Real-time Chat** - Community chat for all authenticated users
-- **⚡ Real-time Updates** - Instant sync across all devices via Convex
-- **🎨 Premium UI** - Beautiful glassmorphism design with shadcn/ui
-- **🌙 Dark Mode** - Sleek dark theme with gradient accents
-- **📱 Responsive** - Works on all screen sizes
+- **Authentication** - Email/password auth powered by Convex Auth
+- **Todo List** - Personal task management with CRUD operations
+- **Real-time Chat** - Community chat for all authenticated users
+- **Real-time Updates** - Instant sync across all devices via Convex
+- **Premium UI** - Beautiful glassmorphism design with shadcn/ui
+- **Dark Mode** - Sleek dark theme with gradient accents
+- **Responsive** - Works on all screen sizes
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Category | Technology |
 |----------|------------|
@@ -29,7 +29,7 @@ A beautiful, real-time task manager with community chat, built with modern web t
 | **Language** | TypeScript |
 | **Package Manager** | Bun |
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -62,7 +62,7 @@ A beautiful, real-time task manager with community chat, built with modern web t
 
 5. **Open [http://localhost:3000](http://localhost:3000)** in your browser
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 ├── app/                    # Next.js App Router
@@ -96,7 +96,7 @@ A beautiful, real-time task manager with community chat, built with modern web t
     └── utils.ts            # Utility functions
 ```
 
-## 🔧 Environment Variables
+## Environment Variables
 
 Create a `.env.local` file in the root directory:
 
@@ -105,10 +105,10 @@ CONVEX_DEPLOYMENT=your-deployment-name
 NEXT_PUBLIC_CONVEX_URL=https://your-deployment.convex.cloud
 ```
 
-## 📝 License
+## License
 
 MIT License - feel free to use this project for learning or as a starting point for your own apps!
 
 ---
 
-Built with ❤️ using [Next.js](https://nextjs.org/), [Convex](https://convex.dev/), and [shadcn/ui](https://ui.shadcn.com/)
+Built with [Next.js](https://nextjs.org/), [Convex](https://convex.dev/), and [shadcn/ui](https://ui.shadcn.com/)
