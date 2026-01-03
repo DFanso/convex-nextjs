@@ -1,8 +1,11 @@
 "use client";
 
+import { Authenticated, Unauthenticated, AuthLoading } from "convex/react";
 import { TodoInput } from "./todo-input";
 import { TodoList } from "./todo-list";
 import { TodoStats } from "./todo-stats";
+import { AuthForm } from "@/components/auth/auth-form";
+import { UserButton } from "@/components/auth/user-button";
 
 export function TodoApp() {
     return (
@@ -24,58 +27,79 @@ export function TodoApp() {
                 }}
             />
 
-            {/* Main content */}
-            <div className="mx-auto max-w-2xl px-4 py-12 sm:px-6 lg:px-8">
-                {/* Header */}
-                <header className="mb-12 text-center">
-                    <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-medium text-primary">
-                        <svg
-                            className="size-3.5"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            strokeWidth={2}
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M13 10V3L4 14h7v7l9-11h-7z"
-                            />
-                        </svg>
-                        Powered by Convex
+            {/* Loading state */}
+            <AuthLoading>
+                <div className="flex min-h-screen items-center justify-center">
+                    <div className="flex flex-col items-center gap-4">
+                        <div className="size-12 animate-spin rounded-full border-4 border-primary/20 border-t-primary" />
+                        <p className="text-sm text-muted-foreground">Loading...</p>
                     </div>
-                    <h1 className="mb-3 bg-gradient-to-r from-foreground via-foreground/90 to-foreground/70 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-5xl">
-                        Task Manager
-                    </h1>
-                    <p className="text-base text-muted-foreground">
-                        Stay organized with real-time sync across all your devices
-                    </p>
-                </header>
-
-                {/* Todo input */}
-                <div className="mb-8">
-                    <TodoInput />
                 </div>
+            </AuthLoading>
 
-                {/* Stats */}
-                <div className="mb-6">
-                    <TodoStats />
+            {/* Unauthenticated - Show login form */}
+            <Unauthenticated>
+                <div className="flex min-h-screen items-center justify-center px-4">
+                    <AuthForm />
                 </div>
+            </Unauthenticated>
 
-                {/* Todo list */}
-                <TodoList />
+            {/* Authenticated - Show todo app */}
+            <Authenticated>
+                <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6 lg:px-8">
+                    {/* Header with user button */}
+                    <header className="mb-8">
+                        <div className="flex items-center justify-between">
+                            <div>
+                                <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-medium text-primary">
+                                    <svg
+                                        className="size-3"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                        strokeWidth={2}
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            d="M13 10V3L4 14h7v7l9-11h-7z"
+                                        />
+                                    </svg>
+                                    Powered by Convex
+                                </div>
+                                <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">
+                                    Task Manager
+                                </h1>
+                            </div>
+                            <UserButton />
+                        </div>
+                    </header>
 
-                {/* Footer */}
-                <footer className="mt-12 text-center">
-                    <p className="text-xs text-muted-foreground/60">
-                        Built with{" "}
-                        <span className="font-medium text-muted-foreground">Next.js</span>,{" "}
-                        <span className="font-medium text-muted-foreground">Convex</span>,
-                        and{" "}
-                        <span className="font-medium text-muted-foreground">shadcn/ui</span>
-                    </p>
-                </footer>
-            </div>
+                    {/* Todo input */}
+                    <div className="mb-6">
+                        <TodoInput />
+                    </div>
+
+                    {/* Stats */}
+                    <div className="mb-4">
+                        <TodoStats />
+                    </div>
+
+                    {/* Todo list */}
+                    <TodoList />
+
+                    {/* Footer */}
+                    <footer className="mt-8 text-center">
+                        <p className="text-xs text-muted-foreground/60">
+                            Built with{" "}
+                            <span className="font-medium text-muted-foreground">Next.js</span>,{" "}
+                            <span className="font-medium text-muted-foreground">Convex</span>,
+                            and{" "}
+                            <span className="font-medium text-muted-foreground">shadcn/ui</span>
+                        </p>
+                    </footer>
+                </div>
+            </Authenticated>
         </div>
     );
 }
