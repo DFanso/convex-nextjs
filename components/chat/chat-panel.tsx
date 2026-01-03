@@ -107,7 +107,7 @@ export function ChatPanel() {
                                 >
                                     {!isOwn && (
                                         <span className="text-xs font-medium text-muted-foreground">
-                                            {msg.userName || msg.userEmail.split("@")[0]}
+                                            {msg.userEmail.split("@")[0]}
                                         </span>
                                     )}
                                     <div
