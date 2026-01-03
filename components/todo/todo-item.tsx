@@ -52,7 +52,7 @@ export function TodoItem({ id, text, completed }: TodoItemProps) {
     return (
         <div
             className={cn(
-                "group relative flex items-center gap-4 rounded-xl border border-border/50 bg-card/50 p-4 backdrop-blur-sm transition-all duration-300",
+                "group relative flex items-center gap-3 rounded-xl border border-border/50 bg-card/50 p-4 pl-5 backdrop-blur-sm transition-all duration-300 overflow-hidden",
                 "hover:border-primary/30 hover:bg-card/80 hover:shadow-lg hover:shadow-primary/5",
                 completed && "opacity-60",
                 isDeleting && "animate-fade-out scale-95 opacity-0"
@@ -61,24 +61,22 @@ export function TodoItem({ id, text, completed }: TodoItemProps) {
             {/* Gradient accent line */}
             <div
                 className={cn(
-                    "absolute left-0 top-0 h-full w-1 rounded-l-xl bg-gradient-to-b transition-all duration-300",
+                    "absolute left-0 inset-y-0 w-1 bg-gradient-to-b transition-all duration-300",
                     completed
-                        ? "from-green-500/50 to-emerald-500/50"
-                        : "from-primary/50 to-primary/20"
+                        ? "from-green-500 to-emerald-500"
+                        : "from-primary to-primary/50"
                 )}
             />
 
             {/* Checkbox */}
-            <div className="flex items-center justify-center">
-                <Checkbox
-                    checked={completed}
-                    onCheckedChange={handleToggle}
-                    className={cn(
-                        "size-5 rounded-full transition-all duration-300",
-                        completed && "bg-green-500 border-green-500 data-[checked]:bg-green-500 data-[checked]:border-green-500"
-                    )}
-                />
-            </div>
+            <Checkbox
+                checked={completed}
+                onCheckedChange={handleToggle}
+                className={cn(
+                    "size-5 shrink-0 rounded-full transition-all duration-300",
+                    completed && "bg-green-500 border-green-500 data-[checked]:bg-green-500 data-[checked]:border-green-500"
+                )}
+            />
 
             {/* Content */}
             <div className="flex-1 min-w-0">

@@ -30,9 +30,9 @@ function Checkbox({
             )}
             {...props}
         >
-            <CheckboxPrimitive.Indicator className="flex items-center justify-center text-current">
+            <CheckboxPrimitive.Indicator className="flex size-full items-center justify-center text-current">
                 <svg
-                    className="size-3.5"
+                    className="size-3"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
