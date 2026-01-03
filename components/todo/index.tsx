@@ -6,6 +6,7 @@ import { TodoList } from "./todo-list";
 import { TodoStats } from "./todo-stats";
 import { AuthForm } from "@/components/auth/auth-form";
 import { UserButton } from "@/components/auth/user-button";
+import { ChatPanel } from "@/components/chat/chat-panel";
 
 export function TodoApp() {
     return (
@@ -99,6 +100,9 @@ export function TodoApp() {
                         </p>
                     </footer>
                 </div>
+
+                {/* Real-time Chat Panel */}
+                <ChatPanel />
             </Authenticated>
         </div>
     );
